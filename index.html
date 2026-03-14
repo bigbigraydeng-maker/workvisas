@@ -1231,6 +1231,11 @@ height: 100%;
             color: #aaa;
         }
 
+        textarea.form-input {
+            resize: vertical;
+            min-height: 80px;
+        }
+
         .form-select {
             padding: 14px 18px;
             border: 2px solid var(--light-sage);
@@ -1264,6 +1269,12 @@ height: 100%;
         .form-submit:hover {
             background: #d35400;
             transform: translateY(-2px);
+        }
+
+        .form-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
 
         .form-note {
@@ -1440,7 +1451,7 @@ height: 100%;
                     <a href="#opportunity" class="nav-link">为什么选新西兰</a>
                     <a href="#jobs" class="nav-link">适合人群</a>
                     <a href="#services" class="nav-link">服务内容</a>
-                    <a href="#income" class="nav-link">收入预期</a>
+                    <a href="about.html" class="nav-link">关于我们</a>
                     <a href="#faq" class="nav-link">常见问题</a>
                 </nav>
                 <a href="#cta" class="header-cta">免费评估</a>
@@ -1467,7 +1478,7 @@ height: 100%;
             <a href="#opportunity" class="mobile-nav-link">为什么选新西兰</a>
             <a href="#jobs" class="mobile-nav-link">适合人群</a>
             <a href="#services" class="mobile-nav-link">服务内容</a>
-            <a href="#income" class="mobile-nav-link">收入预期</a>
+            <a href="about.html" class="mobile-nav-link">关于我们</a>
             <a href="#faq" class="mobile-nav-link">常见问题</a>
         </nav>
         <a href="#cta" class="mobile-cta">免费评估我的资质</a>
@@ -1852,8 +1863,8 @@ height: 100%;
                     </div>
                     <div class="journey-step fade-in">
                         <div class="step-number">6</div>
-                        <h4 class="step-title">签证办理</h4>
-                        <p class="step-desc">材料准备，递交跟进</p>
+                        <h4 class="step-title">签证服务</h4>
+                        <p class="step-desc">持牌顾问办理签证</p>
                     </div>
                     <div class="journey-step fade-in">
                         <div class="step-number">7</div>
@@ -1949,7 +1960,7 @@ height: 100%;
                     </div>
                     <div class="trust-content">
                         <h4>专业团队</h4>
-                        <p>持牌移民顾问、专业律师支持，经验丰富</p>
+                        <p>与新西兰持牌移民顾问合作，提供专业签证服务</p>
                     </div>
                 </div>
                 <div class="trust-item fade-in">
@@ -2081,7 +2092,7 @@ height: 100%;
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            费用因项目类型不同而异，包含评估费、培训费、签证办理费、落地服务费等。我们承诺费用透明，签约前会详细说明每项费用，合同中有明确退款条款。一般来说，出国后2-4个月的收入即可回本。
+                            费用因项目类型不同而异，包含评估费、培训费、签证服务费（由合作的新西兰持牌移民顾问收取）、落地服务费等。我们承诺费用透明，签约前会详细说明每项费用，合同中有明确退款条款。一般来说，出国后2-4个月的收入即可回本。
                         </div>
                     </div>
                 </div>
@@ -2107,7 +2118,7 @@ height: 100%;
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            我们是MoveHub旗下正规品牌，只做合法签证渠道。所有合作雇主都经过严格筛选，签证由持牌顾问办理。合同条款清晰，有退款机制保障。我们不承诺"百分百下签"，只提供真实评估，这本身就是我们诚信的体现。
+                            我们是MoveHub旗下正规品牌，只做合法签证渠道。所有合作雇主都经过严格筛选，签证服务由我们合作的新西兰持牌移民顾问（Licensed Immigration Adviser）提供。合同条款清晰，有退款机制保障。我们不承诺"百分百下签"，只提供真实评估，这本身就是我们诚信的体现。
                         </div>
                     </div>
                 </div>
@@ -2120,48 +2131,86 @@ height: 100%;
         <div class="cta-pattern"></div>
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title fade-in">迈出第一步<br>免费评估你的出海资质</h2>
-                <p class="cta-subtitle fade-in">留下您的信息，我们的顾问将在24小时内联系您</p>
-                <form class="cta-form fade-in" onsubmit="handleSubmit(event)">
-                    <h3 class="form-title">免费评估申请</h3>
+                <h2 class="cta-title fade-in">联系我们<br>获取跨境劳动力解决方案</h2>
+                <p class="cta-subtitle fade-in">填写以下表单，我们的团队将在24小时内与您联系</p>
+                <form class="cta-form fade-in" id="contactForm">
+                    <h3 class="form-title">雇主咨询表单</h3>
                     <div class="form-grid">
                         <div class="form-group">
-                            <label class="form-label">您的姓名</label>
-                            <input type="text" class="form-input" placeholder="请输入您的姓名" required>
+                            <label class="form-label">公司名称</label>
+                            <input type="text" class="form-input" name="companyName" placeholder="请输入公司名称" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">手机号码</label>
-                            <input type="tel" class="form-input" placeholder="请输入手机号码" required>
+                            <label class="form-label">联系人姓名</label>
+                            <input type="text" class="form-input" name="contactName" placeholder="请输入联系人姓名" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">年龄</label>
-                            <select class="form-select" required>
-                                <option value="">请选择年龄段</option>
-                                <option value="18-25">18-25岁</option>
-                                <option value="26-35">26-35岁</option>
-                                <option value="36-45">36-45岁</option>
-                                <option value="46+">46岁以上</option>
+                            <label class="form-label">联系电话</label>
+                            <input type="tel" class="form-input" name="phone" placeholder="请输入联系电话" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">电子邮箱</label>
+                            <input type="email" class="form-input" name="email" placeholder="请输入电子邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">公司是否为AEWV认证雇主？</label>
+                            <select class="form-select" name="isAewvEmployer" required>
+                                <option value="">请选择</option>
+                                <option value="是，已认证">是，已认证</option>
+                                <option value="正在申请认证">正在申请认证</option>
+                                <option value="否，未认证">否，未认证</option>
+                                <option value="不确定">不确定</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">目前职业</label>
-                            <select class="form-select" required>
-                                <option value="">请选择职业类型</option>
-                                <option value="技能工">技能工（焊工、机修、司机等）</option>
-                                <option value="农牧业">农牧业（农场、果园等）</option>
-                                <option value="加工业">加工业（肉类、食品等）</option>
-                                <option value="服务业">服务业（餐饮、酒店等）</option>
+                            <label class="form-label">所属行业</label>
+                            <select class="form-select" name="industry" required>
+                                <option value="">请选择行业</option>
+                                <option value="农业/园艺">农业/园艺</option>
+                                <option value="肉类加工">肉类加工</option>
+                                <option value="林业">林业</option>
+                                <option value="物流运输">物流运输</option>
+                                <option value="酒店餐饮">酒店餐饮</option>
+                                <option value="建筑/基建">建筑/基建</option>
+                                <option value="制造业">制造业</option>
                                 <option value="其他">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">预计需要多少工人？</label>
+                            <select class="form-select" name="workerCount" required>
+                                <option value="">请选择人数</option>
+                                <option value="1-5人">1-5人</option>
+                                <option value="6-10人">6-10人</option>
+                                <option value="11-20人">11-20人</option>
+                                <option value="21-50人">21-50人</option>
+                                <option value="50人以上">50人以上</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">公司所在地</label>
+                            <select class="form-select" name="location" required>
+                                <option value="">请选择地区</option>
+                                <option value="奥克兰">奥克兰 (Auckland)</option>
+                                <option value="怀卡托">怀卡托 (Waikato)</option>
+                                <option value="丰盛湾">丰盛湾 (Bay of Plenty)</option>
+                                <option value="惠灵顿">惠灵顿 (Wellington)</option>
+                                <option value="坎特伯雷">坎特伯雷 (Canterbury)</option>
+                                <option value="奥塔哥">奥塔哥 (Otago)</option>
+                                <option value="南地">南地 (Southland)</option>
+                                <option value="霍克斯湾">霍克斯湾 (Hawke's Bay)</option>
+                                <option value="塔拉纳基">塔拉纳基 (Taranaki)</option>
+                                <option value="其他地区">其他地区</option>
                             </select>
                         </div>
                         <div class="form-group full-width">
                             <label class="form-label">补充说明（选填）</label>
-                            <input type="text" class="form-input" placeholder="如：工作年限、是否有相关证书等">
+                            <textarea class="form-input" name="message" rows="3" placeholder="请描述您的用工需求、岗位要求等..."></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="form-submit">提交免费评估申请</button>
-                    <p class="form-note">我们承诺保护您的隐私，信息仅用于评估服务</p>
-</form>
+                    <button type="submit" class="form-submit" id="submitBtn">提交咨询</button>
+                    <p class="form-note">我们承诺保护您的隐私，信息仅用于服务咨询</p>
+                </form>
                 <div class="contact-options fade-in">
                     <a href="#" class="contact-option">
                         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2194,7 +2243,7 @@ height: 100%;
                         <li><a href="#opportunity">为什么选新西兰</a></li>
                         <li><a href="#jobs">适合人群</a></li>
                         <li><a href="#services">服务内容</a></li>
-                        <li><a href="#income">收入预期</a></li>
+                        <li><a href="about.html">关于我们</a></li>
                         <li><a href="#faq">常见问题</a></li>
                     </ul>
                 </div>
@@ -2306,9 +2355,52 @@ height: 100%;
         });
 
         // Form submission
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('感谢您的提交！我们的顾问将在24小时内联系您。');
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = '提交中...';
+                submitBtn.disabled = true;
+                
+                const formData = new FormData(contactForm);
+                const data = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+                
+                try {
+                    const API_URL = window.location.hostname === 'localhost' 
+                        ? 'http://localhost:3001' 
+                        : '';
+                    
+                    const response = await fetch(`${API_URL}/api/contact`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (response.ok && result.success) {
+                        alert(result.message);
+                        contactForm.reset();
+                    } else {
+                        alert(result.error || '提交失败，请稍后重试');
+                    }
+                } catch (error) {
+                    console.error('Form submission error:', error);
+                    alert('提交失败，请检查网络连接后重试');
+                } finally {
+                    submitBtn.textContent = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            });
         }
 
         // Smooth scroll for anchor links

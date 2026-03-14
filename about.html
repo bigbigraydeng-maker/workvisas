@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 | WorkVisas.work - 创始人团队</title>
+    <meta name="description" content="WorkVisas.work创始人团队介绍 - Angela Meng-Yee和Ray Deng，专注于跨境劳动力解决方案。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2D5016;
+            --secondary-green: #4A7C23;
+            --warm-orange: #E67E22;
+            --warm-yellow: #F4D03F;
+            --cream: #FDF6E3;
+            --earth-brown: #5D4E37;
+            --dark-forest: #1A3409;
+            --white: #FFFFFF;
+            --light-sage: #E8F0E3;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark-forest);
+        }
+
+        .nav-desktop {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+                gap: 32px;
+            }
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--warm-orange);
+        }
+
+        .nav-link.active {
+            color: var(--secondary-green);
+        }
+
+        .header-cta {
+            display: none;
+            background: var(--warm-orange);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .header-cta {
+                display: inline-block;
+            }
+        }
+
+        .header-cta:hover {
+            background: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .mobile-menu-btn svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--dark-forest);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 999;
+            padding: 80px 20px 40px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-close svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--text-dark);
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .mobile-nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-sage);
+        }
+
+        .mobile-cta {
+            display: block;
+            margin-top: 32px;
+            background: var(--warm-orange);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .page-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-forest) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-hero-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .page-hero-title {
+                font-size: 56px;
+            }
+        }
+
+        .page-hero-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 100px 0;
+            }
+        }
+
+        .section-alt {
+            background: var(--cream);
+        }
+
+        .founder-card {
+            display: grid;
+            gap: 48px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .founder-card {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        .founder-card.reverse {
+            direction: rtl;
+        }
+
+        .founder-card.reverse > * {
+            direction: ltr;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--light-sage);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-green);
+            font-size: 14px;
+            border: 3px dashed var(--secondary-green);
+        }
+
+        .founder-image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--secondary-green);
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .founder-content h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark-forest);
+            margin-bottom: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .founder-content h2 {
+                font-size: 42px;
+            }
+        }
+
+        .founder-title {
+            font-size: 16px;
+            color: var(--secondary-green);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .founder-bio {
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .founder-bio:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .founder-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .highlight-tag {
+            background: var(--light-sage);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .mission-section {
+            background: var(--dark-forest);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .mission-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .mission-title {
+                font-size: 42px;
+            }
+        }
+
+        .mission-text {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--secondary-green) 0%, var(--dark-forest) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-subtitle {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--warm-orange);
+            color: var(--white);
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.4);
+        }
+
+        .footer {
+            background: var(--dark-forest);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-brand h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.7;
+            max-width: 350px;
+        }
+
+        .footer-links h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--warm-orange);
+        }
+
+        .footer-bottom {
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 13px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="18" fill="#4A7C23"/>
+                        <path d="M12 20L18 26L28 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="logo-text">WorkVisas.work</span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html#opportunity" class="nav-link">为什么选新西兰</a>
+                    <a href="index.html#jobs" class="nav-link">适合人群</a>
+                    <a href="index.html#services" class="nav-link">服务内容</a>
+                    <a href="about.html" class="nav-link active">关于我们</a>
+                    <a href="index.html#faq" class="nav-link">常见问题</a>
+                </nav>
+                <a href="index.html#cta" class="header-cta">免费评估</a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <nav class="mobile-nav-links">
+            <a href="index.html#opportunity" class="mobile-nav-link">为什么选新西兰</a>
+            <a href="index.html#jobs" class="mobile-nav-link">适合人群</a>
+            <a href="index.html#services" class="mobile-nav-link">服务内容</a>
+            <a href="about.html" class="mobile-nav-link">关于我们</a>
+            <a href="index.html#faq" class="mobile-nav-link">常见问题</a>
+        </nav>
+        <a href="index.html#cta" class="mobile-cta">免费评估我的资质</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-hero-title fade-in">关于我们</h1>
+            <p class="page-hero-subtitle fade-in">连接中国与新西兰的跨境劳动力解决方案专家</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="founder-card fade-in">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Angela Meng-Yee</span>
+                        <span>照片待上传</span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <h2>Angela Meng-Yee</h2>
+                    <p class="founder-title">联合创始人 | 跨境投资顾问</p>
+                    <p class="founder-bio">
+                        Angela Meng-Yee 是一位专注于亚太地区并购、外商直接投资（FDI）和战略资本合作的跨境投资顾问和交易发起人。她与成长期公司、创始人、家族办公室和跨国投资者合作，识别并执行能够释放可扩展增长的国际投资机会。
+                    </p>
+                    <p class="founder-bio">
+                        她的职业生涯横跨伦敦、香港、北京、东南亚和新西兰，在全球资本、新兴企业和国际市场扩展的交汇处运营。她曾与全球领先的房地产和咨询公司共同领导跨境合作倡议和战略投资合作，在亚太资本市场建立了强大的网络。
+                    </p>
+                    <p class="founder-bio">
+                        除了咨询工作外，Angela 还参与 MoveHub 的开发，这是一个专注于将中国技术工人与新西兰机会连接的跨境劳动力解决方案初创公司。该倡议旨在解决建筑、基础设施、制造和服务等行业的结构性劳动力短缺问题，同时为国际劳动力流动创建透明合规的通道。
+                    </p>
+                    <p class="founder-bio">
+                        凭借在跨境交易结构和国际合作方面的经验，Angela 帮助协调雇主、培训机构、移民顾问和投资合作伙伴，开发支持经济发展和负责任劳动力流动的可扩展劳动力管道。她继续与私人投资和咨询合作伙伴密切合作，利用高净值个人、家族办公室和机构投资者的网络，在亚太地区发起和构建机会。
+                    </p>
+                    <div class="founder-highlights">
+                        <span class="highlight-tag">跨境投资</span>
+                        <span class="highlight-tag">并购交易</span>
+                        <span class="highlight-tag">亚太市场</span>
+                        <span class="highlight-tag">劳动力解决方案</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="founder-card reverse fade-in">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Ray Deng</span>
+                        <span>照片待上传</span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <h2>Ray Deng</h2>
+                    <p class="founder-title">联合创始人 | AI战略与跨境运营</p>
+                    <p class="founder-bio">
+                        Ray Deng 是一位立足奥克兰的跨境创业者和AI战略专家，专注于构建连接中国、新西兰和澳大利亚的AI驱动跨境系统。他是 MoveHub、Compass AI 和 WorkVisas.work 的创始人，致力于在AI系统、劳动力流动和跨境商业领域创造创新解决方案。
+                    </p>
+                    <p class="founder-bio">
+                        作为跨境构建者，Ray 结合深厚的本地专业知识与全球视野，在AI系统、劳动力流动和跨境商业领域创造解决方案。他将战略愿景与实际执行相结合，识别市场空白，构建实用的系统，在跨境领域产生可衡量的影响。
+                    </p>
+                    <p class="founder-bio">
+                        Ray 专注于AI战略与实施，开发并实施改变业务运营的AI战略，从机器学习模型到自然语言处理，创建增强决策能力和自动化复杂工作流程的智能系统。同时，他致力于构建中国与澳新市场之间的桥梁，在应对监管框架和文化差异的同时，识别贸易、投资和合作机会。
+                    </p>
+                    <p class="founder-bio">
+                        在劳动力流动解决方案领域，Ray 创建连接跨境人才与机会的平台，为国际专业人士简化签证流程、工作匹配和劳动力整合。他与创始人、投资者和跨境运营商合作，将复杂的想法转化为可执行的创业项目。
+                    </p>
+                    <div class="founder-highlights">
+                        <span class="highlight-tag">AI战略</span>
+                        <span class="highlight-tag">跨境商业</span>
+                        <span class="highlight-tag">劳动力流动</span>
+                        <span class="highlight-tag">创业构建</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section section">
+        <div class="container">
+            <h2 class="mission-title fade-in">我们的使命</h2>
+            <p class="mission-text fade-in">
+                WorkVisas.work 致力于为中国蓝领工人提供合法、透明、专业的新西兰工作机会。我们与新西兰持牌移民顾问合作，连接经过严格筛选的雇主，为工人提供从评估、培训到落地支持的全流程服务。我们的目标是解决新西兰结构性劳动力短缺，同时为中国工人创造改变生活的出海机会。
+            </p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title fade-in">准备开始您的出海之旅？</h2>
+            <p class="cta-subtitle fade-in">免费评估您的资质，开启新西兰工作新篇章</p>
+            <a href="index.html#cta" class="btn-primary fade-in">
+                立即免费评估
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12 5 19 12 12 19"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>WorkVisas.work</h3>
+                    <p>MoveHub旗下新西兰蓝领出海务工品牌。我们专注于为中国蓝领工人提供合法、透明、专业的出国工作解决方案。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html#opportunity">为什么选新西兰</a></li>
+                        <li><a href="index.html#jobs">适合人群</a></li>
+                        <li><a href="index.html#services">服务内容</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="index.html#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">微信: WorkVisas_NZ</a></li>
+                        <li><a href="#">WhatsApp: +64 XXX XXX</a></li>
+                        <li><a href="#">邮箱: hello@workvisas.work</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WorkVisas.work - MoveHub 旗下品牌. All rights reserved.</p>
+                <p>本网站内容仅供参考，具体条件以签约合同为准</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        document.querySelectorAll('.mobile-nav-link, .mobile-cta').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
