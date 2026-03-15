@@ -711,6 +711,87 @@
             color: var(--dark-forest);
         }
 
+        .contact-form {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-input, .form-select {
+            padding: 14px 16px;
+            border: 2px solid var(--border-light);
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-input::placeholder {
+            color: #999;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            margin-top: 24px;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-gray);
+            margin-top: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 24px;
+            }
+        }
+
         /* Contact Section */
         .contact {
             padding: 80px 0;
@@ -895,6 +976,7 @@
                 <nav class="nav">
                     <a href="#industries">Industries</a>
                     <a href="#how-it-works">How It Works</a>
+                    <a href="about.html">About Us</a>
                     <a href="#compliance">Compliance</a>
                     <a href="#contact" class="nav-cta">Get Started</a>
                 </nav>
@@ -1030,7 +1112,7 @@
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                     </div>
                     <h3>Visa Compliance</h3>
-                    <p>We handle all visa documentation and ensure legal compliance throughout the process.</p>
+                    <p>Visa services provided by our partner Licensed Immigration Advisers, ensuring full legal compliance.</p>
                 </div>
                 <div class="solution-card">
                     <div class="solution-icon">
@@ -1118,7 +1200,7 @@
                 <div class="step-item">
                     <div class="step-number"><span>4</span></div>
                     <h3>Workers Arrive Ready</h3>
-                    <p>We handle visa processing so workers arrive job-ready and fully supported.</p>
+                    <p>Our partner Licensed Immigration Advisers handle visa processing so workers arrive job-ready.</p>
                 </div>
             </div>
         </div>
@@ -1152,7 +1234,7 @@
                         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     </div>
                     <h3>Full Visa Support</h3>
-                    <p>Complete immigration documentation and compliance handling for peace of mind.</p>
+                    <p>Immigration services provided by partner Licensed Immigration Advisers for complete compliance.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1278,8 +1360,84 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Solve Your Workforce Challenges?</h2>
-                <p>Let's discuss how we can help your business thrive with reliable, pre-screened overseas workers.</p>
-                <a href="/cdn-cgi/l/email-protection#8de8e0fde1e2f4e8fffecdfae2ffe6fbe4feecfea3fae2ffe6" class="btn btn-primary">Contact Us Today</a>
+                <p>Fill out the form below and our team will contact you within 24 hours.</p>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-input" name="companyName" placeholder="Your company name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Contact Name</label>
+                            <input type="text" class="form-input" name="contactName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" name="phone" placeholder="Your phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">AEWV Accredited Employer?</label>
+                            <select class="form-select" name="isAewvEmployer" required>
+                                <option value="">Please select</option>
+                                <option value="Yes, accredited">Yes, accredited</option>
+                                <option value="Applying for accreditation">Applying for accreditation</option>
+                                <option value="No, not accredited">No, not accredited</option>
+                                <option value="Not sure">Not sure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Industry</label>
+                            <select class="form-select" name="industry" required>
+                                <option value="">Please select</option>
+                                <option value="Agriculture/Horticulture">Agriculture/Horticulture</option>
+                                <option value="Meat Processing">Meat Processing</option>
+                                <option value="Forestry">Forestry</option>
+                                <option value="Logistics">Logistics</option>
+                                <option value="Hospitality">Hospitality</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Number of Workers Needed</label>
+                            <select class="form-select" name="workerCount" required>
+                                <option value="">Please select</option>
+                                <option value="1-5">1-5 workers</option>
+                                <option value="6-10">6-10 workers</option>
+                                <option value="11-20">11-20 workers</option>
+                                <option value="21-50">21-50 workers</option>
+                                <option value="50+">50+ workers</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Location</label>
+                            <select class="form-select" name="location" required>
+                                <option value="">Please select</option>
+                                <option value="Auckland">Auckland</option>
+                                <option value="Waikato">Waikato</option>
+                                <option value="Bay of Plenty">Bay of Plenty</option>
+                                <option value="Wellington">Wellington</option>
+                                <option value="Canterbury">Canterbury</option>
+                                <option value="Otago">Otago</option>
+                                <option value="Southland">Southland</option>
+                                <option value="Hawke's Bay">Hawke's Bay</option>
+                                <option value="Taranaki">Taranaki</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label class="form-label">Additional Information (Optional)</label>
+                            <textarea class="form-input" name="message" rows="3" placeholder="Describe your workforce needs, job requirements, etc."></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">Submit Inquiry</button>
+                    <p class="form-note">We respect your privacy. Your information will only be used for service consultation.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -1802,7 +1960,55 @@
     delete window.__iframeHighlightCleanup;
   };
 })();
-
+</script>
+<script>
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            
+            try {
+                const API_URL = window.location.hostname === 'localhost' 
+                    ? 'http://localhost:3001' 
+                    : '';
+                
+                const response = await fetch(`${API_URL}/api/contact`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    alert(result.message);
+                    contactForm.reset();
+                } else {
+                    alert(result.error || 'Submission failed. Please try again later.');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Submission failed. Please check your network connection and try again.');
+            } finally {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 </script>
 </body>
 </html>

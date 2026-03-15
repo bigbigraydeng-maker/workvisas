@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | WorkVisas.work - Our Founders</title>
+    <meta name="description" content="Meet the founders of WorkVisas.work - Angela Meng-Yee and Ray Deng, experts in cross-border workforce solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #1B4D3E;
+            --secondary-green: #2E7D5A;
+            --accent-gold: #D4A853;
+            --light-sage: #E8F0E8;
+            --dark-forest: #0F2D23;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --text-dark: #1A1A1A;
+            --text-gray: #5A5A5A;
+            --border-light: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+        }
+
+        .logo-sub {
+            font-size: 12px;
+            color: var(--text-gray);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: var(--primary-green);
+        }
+
+        .nav a.active {
+            color: var(--primary-green);
+        }
+
+        .nav-cta {
+            background: var(--primary-green);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: var(--secondary-green);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, rgba(15,45,35,0.95) 0%, rgba(27,77,62,0.9) 100%);
+            padding: 160px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .page-hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background: var(--off-white);
+        }
+
+        .founder-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .founder-card {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .founder-card.reverse {
+            direction: rtl;
+        }
+
+        .founder-card.reverse > * {
+            direction: ltr;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image-placeholder {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: var(--light-sage);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-green);
+            font-size: 14px;
+            border: 3px dashed var(--secondary-green);
+        }
+
+        .founder-image-placeholder svg {
+            width: 64px;
+            height: 64px;
+            stroke: var(--secondary-green);
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .founder-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--dark-forest);
+            margin-bottom: 8px;
+        }
+
+        .founder-title {
+            font-size: 16px;
+            color: var(--secondary-green);
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .founder-bio {
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .founder-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .highlight-tag {
+            background: var(--light-sage);
+            color: var(--primary-green);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .mission-section {
+            background: var(--dark-forest);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .mission-section h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .mission-section p {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-forest) 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 18px 36px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-gold);
+            color: var(--dark-forest);
+        }
+
+        .footer {
+            background: var(--dark-forest);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .footer-logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-powered {
+            font-size: 14px;
+        }
+
+        .footer-powered a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 13px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">WV</div>
+                    <div>
+                        <div class="logo-text">WorkVisas.work</div>
+                        <div class="logo-sub">Powered by MoveHub</div>
+                    </div>
+                </a>
+                <nav class="nav">
+                    <a href="index.html#industries">Industries</a>
+                    <a href="index.html#how-it-works">How It Works</a>
+                    <a href="about.html" class="active">About Us</a>
+                    <a href="index.html#compliance">Compliance</a>
+                    <a href="index.html#contact" class="nav-cta">Get Started</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="fade-in">About Us</h1>
+            <p class="fade-in">Connecting New Zealand employers with reliable overseas workforce solutions</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="founder-card fade-in">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Angela Meng-Yee</span>
+                        <span>Photo to be uploaded</span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <h2>Angela Meng-Yee</h2>
+                    <p class="founder-title">Co-Founder | Cross-Border Investment Advisor</p>
+                    <p class="founder-bio">
+                        Angela Meng-Yee is a cross-border investment advisor and deal originator specialising in mergers and acquisitions, foreign direct investment (FDI), and strategic capital partnerships across the Asia Pacific region. She works with growth-stage companies, founders, family offices, and multinational investors to identify and execute international investment opportunities that unlock scalable growth.
+                    </p>
+                    <p class="founder-bio">
+                        With a career spanning London, Hong Kong, Beijing, Southeast Asia, and New Zealand, Angela operates at the intersection of global capital, emerging ventures, and international market expansion. She has led cross-border partnership initiatives and strategic investment collaborations alongside leading global real estate and advisory firms, building a strong network across Asia Pacific capital markets.
+                    </p>
+                    <p class="founder-bio">
+                        In addition to her advisory work, Angela is involved in the development of MoveHub, a cross-border workforce solutions startup focused on connecting skilled workers from China with opportunities in New Zealand. The initiative aims to address structural labour shortages in sectors such as construction, infrastructure, manufacturing, and services while creating transparent and compliant pathways for international workforce mobility.
+                    </p>
+                    <p class="founder-bio">
+                        Drawing on her experience in cross-border deal structuring and international partnerships, Angela helps align employers, training providers, immigration advisors, and investment partners to develop scalable workforce pipelines that support both economic development and responsible labour mobility.
+                    </p>
+                    <div class="founder-highlights">
+                        <span class="highlight-tag">Cross-Border Investment</span>
+                        <span class="highlight-tag">M&A</span>
+                        <span class="highlight-tag">Asia Pacific Markets</span>
+                        <span class="highlight-tag">Workforce Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="founder-card reverse fade-in">
+                <div class="founder-image">
+                    <div class="founder-image-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Ray Deng</span>
+                        <span>Photo to be uploaded</span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <h2>Ray Deng</h2>
+                    <p class="founder-title">Co-Founder | AI Strategy & Cross-Border Operations</p>
+                    <p class="founder-bio">
+                        Ray Deng is an Auckland-based cross-border entrepreneur and AI strategist, focused on building AI-driven cross-border systems connecting China, New Zealand, and Australia. He is the founder of MoveHub, Compass AI, and WorkVisas.work, dedicated to creating innovative solutions in AI systems, workforce mobility, and cross-border commerce.
+                    </p>
+                    <p class="founder-bio">
+                        As a cross-border builder, Ray combines deep local expertise with a global perspective to create solutions in AI systems, workforce mobility, and cross-border commerce. He bridges strategic vision with hands-on execution, identifying market gaps and building practical systems that create measurable impact across borders.
+                    </p>
+                    <p class="founder-bio">
+                        Ray focuses on AI strategy and implementation, developing and implementing AI strategies that transform business operations. From machine learning models to natural language processing, he creates intelligent systems that enhance decision-making and automate complex workflows. He also builds bridges between Chinese and Australasian markets, identifying opportunities for trade, investment, and collaboration while navigating regulatory frameworks and cultural nuances.
+                    </p>
+                    <p class="founder-bio">
+                        In the labour mobility solutions space, Ray creates platforms that connect talent with opportunities across borders, simplifying visa processes, job matching, and workforce integration for international professionals. He works with founders, investors, and cross-border operators to turn complex ideas into executable ventures.
+                    </p>
+                    <div class="founder-highlights">
+                        <span class="highlight-tag">AI Strategy</span>
+                        <span class="highlight-tag">Cross-Border Business</span>
+                        <span class="highlight-tag">Labour Mobility</span>
+                        <span class="highlight-tag">Startup Building</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="fade-in">Our Mission</h2>
+            <p class="fade-in">
+                WorkVisas.work is dedicated to providing legitimate, transparent, and professional New Zealand employment opportunities for overseas workers. We partner with New Zealand Licensed Immigration Advisers and connect thoroughly vetted employers, offering end-to-end support from assessment and training to on-ground assistance. Our goal is to address New Zealand's structural labour shortages while creating life-changing overseas opportunities for workers.
+            </p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="fade-in">Ready to Solve Your Workforce Challenges?</h2>
+            <p class="fade-in">Contact us today to discuss your workforce needs</p>
+            <a href="index.html#contact" class="btn-primary fade-in">
+                Get Started
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">WV</div>
+                    <div class="footer-logo-text">WorkVisas.work</div>
+                </div>
+                <div class="footer-powered">
+                    Powered by <a href="#">MoveHub</a> - Global Overseas Development Platform
+                </div>
+            </div>
+            <p class="footer-copyright">&copy; 2026 WorkVisas.work. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
